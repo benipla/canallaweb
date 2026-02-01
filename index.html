@@ -9,7 +9,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Bebas Neue (cuerpo) + VTKS Smash desde CDNfonts (títulos canallas) -->
+    <!-- Google Fonts: Bebas Neue (cuerpo) + VTKS Smash desde CDNfonts (titulos canallas) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
     <style>
         /* ========================================
            COMEDIA CANALLA - ESTILOS PERSONALIZADOS
-           Estética: Speakeasy clandestino nocturno
+           Estetica: Speakeasy clandestino nocturno
            ======================================== */
         
         * {
@@ -55,21 +55,21 @@
             letter-spacing: 0.05em;
         }
         
-        /* Párrafos con mejor legibilidad */
+        /* Parrafos con mejor legibilidad */
         p {
             line-height: 1.6;
             letter-spacing: 0.08em;
             font-size: 1.1rem;
         }
         
-        /* Fuente canalla para títulos principales */
+        /* Fuente canalla para titulos principales */
         .font-display {
             font-family: 'VTKS Smash', Impact, sans-serif;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
         
-        /* Fuente Bebas para subtítulos y textos destacados */
+        /* Fuente Bebas para subtitulos y textos destacados */
         .font-bebas {
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 0.1em;
@@ -83,7 +83,7 @@
                 linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
         }
         
-        /* Efecto de grano cinematográfico */
+        /* Efecto de grano cinematografico */
         .grain::before {
             content: '';
             position: fixed;
@@ -96,7 +96,7 @@
             z-index: 1000;
         }
         
-        /* Título principal con efecto dramático */
+        /* Titulo principal con efecto dramatico */
         .title-glow {
             text-shadow: 
                 0 0 40px rgba(196, 30, 58, 0.4),
@@ -168,7 +168,7 @@
             transform: translateY(-5px);
         }
         
-        /* Galería con efecto hover */
+        /* Galeria con efecto hover */
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -272,7 +272,7 @@
             <div class="hidden md:flex gap-8 text-sm uppercase tracking-wider">
                 <a href="#sobre" class="text-crema/70 hover:text-crema transition-colors">El Show</a>
                 <a href="#tickets" class="text-crema/70 hover:text-crema transition-colors">Tickets</a>
-                <a href="#galeria" class="text-crema/70 hover:text-crema transition-colors">Galería</a>
+                <a href="#galeria" class="text-crema/70 hover:text-crema transition-colors">Galeria</a>
                 <a href="#ubicacion" class="text-crema/70 hover:text-crema transition-colors">Ubicacion</a>
             </div>
             <a href="#tickets" class="btn-canalla px-5 py-2 rounded text-crema-suave font-medium text-sm uppercase tracking-wider">
@@ -295,17 +295,48 @@
         <!-- Spotlight effect -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-rojo-canalla/10 via-transparent to-transparent opacity-50"></div>
         
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <!-- Subtítulo superior -->
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <!-- Subtitulo superior -->
             <p class="animate-fade-in-up text-dorado uppercase tracking-[0.3em] text-sm md:text-base mb-6 opacity-0" style="animation-delay: 0.2s;">
-                Stand Up Comedy en Español
+                Stand Up Comedy en Espanol
             </p>
             
-            <!-- Título principal -->
-            <h1 class="animate-fade-in-up hero-title font-display text-5xl md:text-7xl lg:text-8xl font-bold text-crema-suave title-glow mb-6 opacity-0" style="animation-delay: 0.4s;">
-                Comedia<br>
-                <span class="text-rojo-canalla">Canalla</span>
-            </h1>
+            <!-- Titulo principal con imagenes de los hosts -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-6">
+                <!-- Imagen Beni Pla (izquierda) -->
+                <div class="animate-fade-in-up opacity-0 order-2 md:order-1" style="animation-delay: 0.3s;">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-rojo-canalla/20 rounded-full blur-xl group-hover:bg-rojo-canalla/30 transition-all"></div>
+                        <img src="https://via.placeholder.com/200x200/c41e3a/f5e6c8?text=BENI+PLA" 
+                             alt="Beni Pla" 
+                             class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-dorado/30 hover:border-rojo-canalla transition-all shadow-2xl">
+                        <div class="mt-4 text-center">
+                            <p class="font-bebas text-dorado text-xl md:text-2xl tracking-wider">BENI PLA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Titulo central -->
+                <div class="animate-fade-in-up opacity-0 order-1 md:order-2" style="animation-delay: 0.4s;">
+                    <h1 class="hero-title font-display text-5xl md:text-7xl lg:text-8xl font-bold text-crema-suave title-glow">
+                        Comedia<br>
+                        <span class="text-rojo-canalla">Canalla</span>
+                    </h1>
+                </div>
+                
+                <!-- Imagen Tarek (derecha) -->
+                <div class="animate-fade-in-up opacity-0 order-3" style="animation-delay: 0.5s;">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-rojo-canalla/20 rounded-full blur-xl group-hover:bg-rojo-canalla/30 transition-all"></div>
+                        <img src="https://via.placeholder.com/200x200/c41e3a/f5e6c8?text=TAREK" 
+                             alt="Tarek" 
+                             class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-dorado/30 hover:border-rojo-canalla transition-all shadow-2xl">
+                        <div class="mt-4 text-center">
+                            <p class="font-bebas text-dorado text-xl md:text-2xl tracking-wider">TAREK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <!-- Ubicacion -->
             <div class="animate-fade-in-up opacity-0 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-crema/80 mb-10" style="animation-delay: 0.6s;">
@@ -366,16 +397,16 @@
                 <div class="max-w-3xl mx-auto text-center">
                     <p class="text-lg md:text-xl text-crema/80 leading-relaxed mb-6">
                         En las entrañas de <strong class="text-dorado">Whiskylucan</strong>, donde el whisky fluye y las luces son tenues, 
-                        nace <span class="text-crema-suave font-bold">Comedia Canalla</span>: el único show de stand up en español de Miami que se atreve 
-                        a cruzar la línea.
+                        nace <span class="text-crema-suave font-bold">Comedia Canalla</span>: el unico show de stand up en español de Miami que se atreve 
+                        a cruzar la linea.
                     </p>
                     <p class="text-lg md:text-xl text-crema/80 leading-relaxed mb-6">
                         Cada jueves, los mejores comediantes latinos transforman este rincon de la Calle Ocho 
-                        en un refugio para las carcajadas sin filtro. Aquí no hay temas prohibidos, solo 
+                        en un refugio para las carcajadas sin filtro. Aqui no hay temas prohibidos, solo 
                         buenas risas y la mejor vibra de un <span class="text-rojo-canalla font-medium">speakeasy clandestino</span>.
                     </p>
                     <p class="font-bebas text-2xl text-dorado mt-10 tracking-widest">
-                        "Donde la comedia no tiene límites"
+                        "Donde la comedia no tiene limites"
                     </p>
                 </div>
                 
@@ -450,7 +481,7 @@
             
             <!-- Nota adicional -->
             <p class="text-center text-crema/50 text-sm mt-10">
-                * Las entradas también se pueden adquirir en la puerta, sujetas a disponibilidad
+                * Las entradas tambien se pueden adquirir en la puerta, sujetas a disponibilidad
             </p>
         </div>
     </section>
@@ -470,7 +501,7 @@
                 </h2>
             </div>
             
-            <!-- Grid de imágenes -->
+            <!-- Grid de imagenes -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 <!-- Imagen 1 - Grande -->
                 <div class="col-span-2 row-span-2 gallery-item rounded-sm">
@@ -482,7 +513,7 @@
                 <!-- Imagen 2 -->
                 <div class="gallery-item rounded-sm">
                     <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop" 
-                         alt="Público disfrutando" 
+                         alt="Publico disfrutando" 
                          class="w-full h-full object-cover rounded-sm aspect-square">
                 </div>
                 
@@ -519,7 +550,7 @@
     <section id="ubicacion" class="py-20 md:py-32">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">Encuéntranos</p>
+                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">Encuentranos</p>
                 <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
                     La <span class="text-rojo-canalla">Ubicacion</span>
                 </h2>
@@ -557,8 +588,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <div>
-                                <p class="font-medium text-crema">+21 años</p>
-                                <p class="text-sm">Se requiere ID válido en la entrada</p>
+                                <p class="font-medium text-crema">+21 anos</p>
+                                <p class="text-sm">Se requiere ID valido en la entrada</p>
                             </div>
                         </div>
                     </div>
@@ -630,8 +661,7 @@
                     </a>
                     
                     <!-- Email -->
-                    <a href="mailto:info@comediacanallamiami.com" 
-                       class="w-12 h-12 rounded-full border border-dorado/30 flex items-center justify-center text-crema/70 hover:text-rojo-canalla hover:border-rojo-canalla transition-all">
+                    <a href="/cdn-cgi/l/email-protection#4920272f26092a26242c2d20282a2827282525282420282420672a2624" class="w-12 h-12 rounded-full border border-dorado/30 flex items-center justify-center text-crema/70 hover:text-rojo-canalla hover:border-rojo-canalla transition-all">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
@@ -641,8 +671,8 @@
                 <!-- Contacto -->
                 <div class="text-center md:text-right">
                     <p class="text-crema/50 text-sm mb-1">Contrataciones y prensa:</p>
-                    <a href="mailto:info@comediacanallamiami.com" class="text-dorado hover:text-crema transition-colors">
-                        info@comediacanallamiami.com
+                    <a href="/cdn-cgi/l/email-protection#472e2921280724282a22232e26242629262b2b262a2e262a2e6924282a" class="text-dorado hover:text-crema transition-colors">
+                        <span class="__cf_email__" data-cfemail="99f0f7fff6d9faf6f4fcfdf0f8faf8f7f8f5f5f8f4f0f8f4f0b7faf6f4">[email&#160;protected]</span>
                     </a>
                 </div>
             </div>
@@ -659,7 +689,7 @@
     <!-- ========================================
          SCRIPTS
          ======================================== -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scroll para los enlaces de navegacion
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -699,14 +729,5 @@
             });
         }, observerOptions);
         
-        // Observar elementos con clase específica
-        document.querySelectorAll('.event-card, .gallery-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-    
-</body>
-</html>
+        // Observar elementos con clase especifica
+        document.querySelectorAll('.ev
