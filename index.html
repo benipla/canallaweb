@@ -9,7 +9,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Bebas Neue (cuerpo) + VTKS Smash desde CDNfonts (titulos canallas) -->
+    <!-- Google Fonts: Bebas Neue (cuerpo) + VTKS Smash desde CDNfonts (títulos canallas) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -21,13 +21,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'negro': '#0a0a0a',
-                        'negro-suave': '#141414',
-                        'rojo-canalla': '#c41e3a',
-                        'rojo-hover': '#e63950',
-                        'crema': '#f5e6c8',
-                        'crema-suave': '#faf3e3',
-                        'dorado': '#d4a853',
+                        'negro': '#1a1a1a',
+                        'negro-suave': '#0d0d0d',
+                        'rojo-canalla': '#D32F2F',
+                        'rojo-hover': '#E53935',
+                        'crema': '#E8DCC4',
+                        'crema-suave': '#F5F5DC',
+                        'dorado': '#D32F2F',
                     },
                     fontFamily: {
                         'display': ['VTKS Smash', 'Impact', 'sans-serif'],
@@ -40,8 +40,8 @@
     
     <style>
         /* ========================================
-           COMEDIA CANALLA - ESTILOS PERSONALIZADOS
-           Estetica: Speakeasy clandestino nocturno
+           COMEDIA CANALLA - ESTILOS CANALLAS
+           Estetica: Underground rebelde con papel rasgado
            ======================================== */
         
         * {
@@ -50,40 +50,41 @@
         
         body {
             font-family: 'Bebas Neue', sans-serif;
-            background-color: #0a0a0a;
-            color: #f5e6c8;
+            background-color: #1a1a1a;
+            color: #E8DCC4;
             letter-spacing: 0.05em;
         }
         
-        /* Parrafos con mejor legibilidad */
+        /* Párrafos con mejor legibilidad */
         p {
             line-height: 1.6;
             letter-spacing: 0.08em;
             font-size: 1.1rem;
         }
         
-        /* Fuente canalla para titulos principales */
+        /* Fuente canalla para títulos principales */
         .font-display {
             font-family: 'VTKS Smash', Impact, sans-serif;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
         
-        /* Fuente Bebas para subtitulos y textos destacados */
+        /* Fuente Bebas para subtítulos y textos destacados */
         .font-bebas {
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 0.1em;
         }
         
-        /* Textura de fondo tipo club nocturno */
+        /* Textura de fondo tipo grunge underground */
         .bg-texture {
             background: 
-                radial-gradient(ellipse at 20% 0%, rgba(196, 30, 58, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 100%, rgba(196, 30, 58, 0.1) 0%, transparent 50%),
-                linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+                radial-gradient(circle at 30% 20%, rgba(211, 47, 47, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(211, 47, 47, 0.1) 0%, transparent 40%),
+                linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 50%, #1a1a1a 100%);
+            position: relative;
         }
         
-        /* Efecto de grano cinematografico */
+        /* Efecto de grano y textura grunge */
         .grain::before {
             content: '';
             position: fixed;
@@ -91,16 +92,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.05) 2px,
+                    rgba(0, 0, 0, 0.05) 4px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.05) 2px,
+                    rgba(0, 0, 0, 0.05) 4px
+                );
             pointer-events: none;
             z-index: 1000;
+            opacity: 0.6;
         }
         
-        /* Titulo principal con efecto dramatico */
+        /* Titulo principal con efecto grunge y sombra dura */
         .title-glow {
             text-shadow: 
-                0 0 40px rgba(196, 30, 58, 0.4),
-                0 0 80px rgba(196, 30, 58, 0.2);
+                4px 4px 0px #B71C1C,
+                8px 8px 0px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(211, 47, 47, 0.3);
+            position: relative;
         }
         
         /* Borde decorativo estilo speakeasy */
@@ -121,14 +139,14 @@
         }
         
         /* Boton CTA con efecto neon */
-        .btn-canalla {
+        /* Boton CTA estilo grunge agresivo */
             position: relative;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b1528 100%);
+            background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
             box-shadow: 
-                0 4px 15px rgba(196, 30, 58, 0.4),
+                0 4px 15px rgba(211, 47, 47, 0.6),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            overflow: hidden;
+            border: 3px solid #B71C1C;
         }
         
         .btn-canalla::before {
@@ -143,12 +161,12 @@
         }
         
         .btn-canalla:hover {
-            background: linear-gradient(135deg, #e63950 0%, #c41e3a 100%);
+            background: linear-gradient(135deg, #E53935 0%, #D32F2F 100%);
             box-shadow: 
-                0 6px 25px rgba(196, 30, 58, 0.6),
-                0 0 40px rgba(196, 30, 58, 0.3),
+                0 6px 25px rgba(211, 47, 47, 0.7),
+                0 0 40px rgba(211, 47, 47, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            transform: translateY(-4px) scale(1.02);
         }
         
         .btn-canalla:hover::before {
@@ -158,7 +176,7 @@
         /* Cards de eventos */
         .event-card {
             background: linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
-            border: 1px solid rgba(212, 168, 83, 0.2);
+            border: 3px solid #D32F2F;
             transition: all 0.4s ease;
         }
         
@@ -168,17 +186,21 @@
             transform: translateY(-5px);
         }
         
-        /* Galeria con efecto hover */
+        /* Galeria con efecto grunge */
         .gallery-item {
             position: relative;
             overflow: hidden;
+            border: 4px solid #D32F2F;
+            box-shadow: 
+                0 6px 20px rgba(0, 0, 0, 0.6),
+                inset 0 0 20px rgba(0, 0, 0, 0.3);
         }
         
         .gallery-item::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, transparent 50%);
+            background: linear-gradient(135deg, transparent 0%, rgba(211, 47, 47, 0.3) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -189,75 +211,53 @@
         
         .gallery-item img {
             transition: transform 0.5s ease;
+            filter: grayscale(15%) contrast(115%);
         }
         
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.15);
+            filter: grayscale(0%) contrast(125%);
         }
         
         /* Separador decorativo */
         .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.5), transparent);
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #D32F2F, transparent);
+            position: relative;
+            box-shadow: 0 2px 10px rgba(211, 47, 47, 0.5);
         }
         
-        /* Animaciones de entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Efecto de papel rasgado para secciones destacadas */
+        .papel-rasgado {
+            background: linear-gradient(to bottom, #E8DCC4 0%, #D4C5A8 100%);
+            position: relative;
+            padding: 3rem 0;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .papel-rasgado::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, #E8DCC4 0%, #D4C5A8 100%);
+            clip-path: polygon(
+                0% 40%, 3% 0%, 7% 60%, 10% 30%, 14% 70%, 18% 20%, 22% 80%, 
+                26% 40%, 30% 90%, 34% 50%, 38% 100%, 42% 60%, 46% 85%, 
+                50% 45%, 54% 95%, 58% 55%, 62% 75%, 66% 35%, 70% 85%, 
+                74% 45%, 78% 65%, 82% 25%, 86% 70%, 90% 15%, 94% 55%, 
+                97% 5%, 100% 50%, 100% 100%, 0% 100%
+            );
         }
         
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        
-        /* Scrollbar personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #c41e3a;
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #e63950;
-        }
-        
-        /* Responsive ajustes */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-                line-height: 1.1;
-            }
-        }
-    </style>
-</head>
+        .papel-rasgado::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 20px;
 
 <body class="bg-texture grain">
     
@@ -297,7 +297,7 @@
         
         <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <!-- Subtitulo superior -->
-            <p class="animate-fade-in-up text-dorado uppercase tracking-[0.3em] text-sm md:text-base mb-6 opacity-0" style="animation-delay: 0.2s;">
+            <p class="animate-fade-in-up text-rojo-canalla uppercase tracking-[0.3em] text-sm md:text-base mb-6 opacity-0" style="animation-delay: 0.2s;">
                 Stand Up Comedy en Espanol
             </p>
             
@@ -306,12 +306,12 @@
                 <!-- Imagen Beni Pla (izquierda) -->
                 <div class="animate-fade-in-up opacity-0 order-2 md:order-1" style="animation-delay: 0.3s;">
                     <div class="relative group">
-                        <div class="absolute inset-0 bg-rojo-canalla/20 rounded-full blur-xl group-hover:bg-rojo-canalla/30 transition-all"></div>
-                        <img src="/assets/images/benipla.jpg"
+                        <div class="absolute inset-0 bg-rojo-canalla/30 rounded-full blur-xl group-hover:bg-rojo-canalla/30 transition-all"></div>
+                        <img src="assets/images/beni-pla.jpg" 
                              alt="Beni Pla" 
-                             class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-dorado/30 hover:border-rojo-canalla transition-all shadow-2xl">
+                             class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-5 border-rojo-canalla hover:border-crema transition-all shadow-2xl">
                         <div class="mt-4 text-center">
-                            <p class="font-bebas text-dorado text-xl md:text-2xl tracking-wider">BENI PLA</p>
+                            <p class="font-bebas text-rojo-canalla text-xl md:text-2xl tracking-wider">BENI PLA</p>
                         </div>
                     </div>
                 </div>
@@ -327,12 +327,12 @@
                 <!-- Imagen Tarek (derecha) -->
                 <div class="animate-fade-in-up opacity-0 order-3" style="animation-delay: 0.5s;">
                     <div class="relative group">
-                        <div class="absolute inset-0 bg-rojo-canalla/20 rounded-full blur-xl group-hover:bg-rojo-canalla/30 transition-all"></div>
-                        <img src="https://via.placeholder.com/200x200/c41e3a/f5e6c8?text=TAREK" 
+                        <div class="absolute inset-0 bg-rojo-canalla/30 rounded-full blur-xl group-hover:bg-rojo-canalla/30 transition-all"></div>
+                        <img src="assets/images/tarek.jpg" 
                              alt="Tarek" 
-                             class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-dorado/30 hover:border-rojo-canalla transition-all shadow-2xl">
+                             class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-5 border-rojo-canalla hover:border-crema transition-all shadow-2xl">
                         <div class="mt-4 text-center">
-                            <p class="font-bebas text-dorado text-xl md:text-2xl tracking-wider">TAREK</p>
+                            <p class="font-bebas text-rojo-canalla text-xl md:text-2xl tracking-wider">TAREK</p>
                         </div>
                     </div>
                 </div>
@@ -347,15 +347,15 @@
                     </svg>
                     Calle Ocho, Miami
                 </span>
-                <span class="hidden md:block text-dorado/50">•</span>
+                <span class="hidden md:block text-rojo-canalla/50">•</span>
                 <span class="flex items-center gap-2">
                     <svg class="w-5 h-5 text-rojo-canalla" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     Todos los Jueves
                 </span>
-                <span class="hidden md:block text-dorado/50">•</span>
-                <span class="font-bebas text-dorado tracking-widest">@ Whiskylucan</span>
+                <span class="hidden md:block text-rojo-canalla/50">•</span>
+                <span class="font-bebas text-rojo-canalla tracking-widest">@ Whiskylucan</span>
             </div>
             
             <!-- CTA Button -->
@@ -386,7 +386,7 @@
                 <!-- Decoracion superior -->
                 <div class="flex items-center justify-center gap-4 mb-10">
                     <div class="w-16 h-px bg-dorado/50"></div>
-                    <span class="text-dorado text-2xl">★</span>
+                    <span class="text-rojo-canalla text-2xl">★</span>
                     <div class="w-16 h-px bg-dorado/50"></div>
                 </div>
                 
@@ -396,7 +396,7 @@
                 
                 <div class="max-w-3xl mx-auto text-center">
                     <p class="text-lg md:text-xl text-crema/80 leading-relaxed mb-6">
-                        En las entrañas de <strong class="text-dorado">Whiskylucan</strong>, donde el whisky fluye y las luces son tenues, 
+                        En las entrañas de <strong class="text-rojo-canalla">Whiskylucan</strong>, donde el whisky fluye y las luces son tenues, 
                         nace <span class="text-crema-suave font-bold">Comedia Canalla</span>: el unico show de stand up en español de Miami que se atreve 
                         a cruzar la linea.
                     </p>
@@ -405,7 +405,7 @@
                         en un refugio para las carcajadas sin filtro. Aqui no hay temas prohibidos, solo 
                         buenas risas y la mejor vibra de un <span class="text-rojo-canalla font-medium">speakeasy clandestino</span>.
                     </p>
-                    <p class="font-bebas text-2xl text-dorado mt-10 tracking-widest">
+                    <p class="font-bebas text-2xl text-rojo-canalla mt-10 tracking-widest">
                         "Donde la comedia no tiene limites"
                     </p>
                 </div>
@@ -413,7 +413,7 @@
                 <!-- Decoracion inferior -->
                 <div class="flex items-center justify-center gap-4 mt-10">
                     <div class="w-16 h-px bg-dorado/50"></div>
-                    <span class="text-dorado text-2xl">★</span>
+                    <span class="text-rojo-canalla text-2xl">★</span>
                     <div class="w-16 h-px bg-dorado/50"></div>
                 </div>
             </div>
@@ -429,7 +429,7 @@
     <section id="tickets" class="py-20 md:py-32">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">No te lo pierdas</p>
+                <p class="text-rojo-canalla uppercase tracking-[0.3em] text-sm mb-4">No te lo pierdas</p>
                 <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
                     Proximos <span class="text-rojo-canalla">Shows</span>
                 </h2>
@@ -438,7 +438,7 @@
             <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <!-- Card 1 -->
                 <div class="event-card rounded-sm p-8 text-center">
-                    <div class="text-dorado uppercase tracking-widest text-xs mb-2">Jueves</div>
+                    <div class="text-rojo-canalla uppercase tracking-widest text-xs mb-2">Jueves</div>
                     <div class="font-display text-5xl text-crema-suave mb-1">06</div>
                     <div class="text-crema/60 mb-6">Febrero 2025</div>
                     <div class="divider mb-6"></div>
@@ -452,7 +452,7 @@
                 
                 <!-- Card 2 -->
                 <div class="event-card rounded-sm p-8 text-center">
-                    <div class="text-dorado uppercase tracking-widest text-xs mb-2">Jueves</div>
+                    <div class="text-rojo-canalla uppercase tracking-widest text-xs mb-2">Jueves</div>
                     <div class="font-display text-5xl text-crema-suave mb-1">13</div>
                     <div class="text-crema/60 mb-6">Febrero 2025</div>
                     <div class="divider mb-6"></div>
@@ -466,7 +466,7 @@
                 
                 <!-- Card 3 -->
                 <div class="event-card rounded-sm p-8 text-center">
-                    <div class="text-dorado uppercase tracking-widest text-xs mb-2">Jueves</div>
+                    <div class="text-rojo-canalla uppercase tracking-widest text-xs mb-2">Jueves</div>
                     <div class="font-display text-5xl text-crema-suave mb-1">20</div>
                     <div class="text-crema/60 mb-6">Febrero 2025</div>
                     <div class="divider mb-6"></div>
@@ -495,7 +495,7 @@
     <section id="galeria" class="py-20 md:py-32">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">La experiencia</p>
+                <p class="text-rojo-canalla uppercase tracking-[0.3em] text-sm mb-4">La experiencia</p>
                 <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
                     La <span class="text-rojo-canalla">Atmosfera</span>
                 </h2>
@@ -505,35 +505,35 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 <!-- Imagen 1 - Grande -->
                 <div class="col-span-2 row-span-2 gallery-item rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&h=800&fit=crop" 
+                    <img src="assets/images/galeria-1.jpg" 
                          alt="Ambiente del show de comedia" 
                          class="w-full h-full object-cover rounded-sm aspect-square">
                 </div>
                 
                 <!-- Imagen 2 -->
                 <div class="gallery-item rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop" 
+                    <img src="assets/images/galeria-2.jpg" 
                          alt="Publico disfrutando" 
                          class="w-full h-full object-cover rounded-sm aspect-square">
                 </div>
                 
                 <!-- Imagen 3 -->
                 <div class="gallery-item rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=400&h=400&fit=crop" 
+                    <img src="assets/images/galeria-3.jpg" 
                          alt="Escenario de comedia" 
                          class="w-full h-full object-cover rounded-sm aspect-square">
                 </div>
                 
                 <!-- Imagen 4 -->
                 <div class="gallery-item rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=400&h=400&fit=crop" 
+                    <img src="assets/images/galeria-4.jpg" 
                          alt="Bar del local" 
                          class="w-full h-full object-cover rounded-sm aspect-square">
                 </div>
                 
                 <!-- Imagen 5 -->
                 <div class="gallery-item rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=400&fit=crop" 
+                    <img src="assets/images/galeria-5.jpg" 
                          alt="Cocteles y bebidas" 
                          class="w-full h-full object-cover rounded-sm aspect-square">
                 </div>
@@ -550,7 +550,7 @@
     <section id="ubicacion" class="py-20 md:py-32">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">Encuentranos</p>
+                <p class="text-rojo-canalla uppercase tracking-[0.3em] text-sm mb-4">Encuentranos</p>
                 <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
                     La <span class="text-rojo-canalla">Ubicacion</span>
                 </h2>
@@ -559,7 +559,7 @@
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <!-- Info del lugar -->
                 <div class="border-speakeasy p-8 md:p-12 bg-negro-suave/50">
-                    <h3 class="font-bebas text-4xl text-dorado mb-6 tracking-wider">Whiskylucan</h3>
+                    <h3 class="font-bebas text-4xl text-rojo-canalla mb-6 tracking-wider">Whiskylucan</h3>
                     
                     <div class="space-y-4 text-crema/80">
                         <div class="flex items-start gap-4">
@@ -596,7 +596,7 @@
                     
                     <a href="https://maps.google.com/?q=Calle+Ocho+Miami+Little+Havana" 
                        target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 mt-8 text-dorado hover:text-crema transition-colors">
+                       class="inline-flex items-center gap-2 mt-8 text-rojo-canalla hover:text-crema transition-colors">
                         <span>Abrir en Google Maps</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -671,7 +671,7 @@
                 <!-- Contacto -->
                 <div class="text-center md:text-right">
                     <p class="text-crema/50 text-sm mb-1">Contrataciones y prensa:</p>
-                    <a href="/cdn-cgi/l/email-protection#472e2921280724282a22232e26242629262b2b262a2e262a2e6924282a" class="text-dorado hover:text-crema transition-colors">
+                    <a href="/cdn-cgi/l/email-protection#472e2921280724282a22232e26242629262b2b262a2e262a2e6924282a" class="text-rojo-canalla hover:text-crema transition-colors">
                         <span class="__cf_email__" data-cfemail="99f0f7fff6d9faf6f4fcfdf0f8faf8f7f8f5f5f8f4f0f8f4f0b7faf6f4">[email&#160;protected]</span>
                     </a>
                 </div>
