@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comedia Canalla | Stand Up Comedy en Español - Miami</title>
+    <meta name="description" content="Stand up comedy en español todos los jueves en Whiskylucan, Calle Ocho, Miami. Una noche canalla de risas y buen humor.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Bebas Neue (cuerpo) + VTKS Smash desde CDNfonts (títulos canallas) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/vtks-smash" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'negro': '#0a0a0a',
+                        'negro-suave': '#141414',
+                        'rojo-canalla': '#c41e3a',
+                        'rojo-hover': '#e63950',
+                        'crema': '#f5e6c8',
+                        'crema-suave': '#faf3e3',
+                        'dorado': '#d4a853',
+                    },
+                    fontFamily: {
+                        'display': ['VTKS Smash', 'Impact', 'sans-serif'],
+                        'body': ['Bebas Neue', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* ========================================
+           COMEDIA CANALLA - ESTILOS PERSONALIZADOS
+           Estética: Speakeasy clandestino nocturno
+           ======================================== */
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Bebas Neue', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5e6c8;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Párrafos con mejor legibilidad */
+        p {
+            line-height: 1.6;
+            letter-spacing: 0.08em;
+            font-size: 1.1rem;
+        }
+        
+        /* Fuente canalla para títulos principales */
+        .font-display {
+            font-family: 'VTKS Smash', Impact, sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        /* Fuente Bebas para subtítulos y textos destacados */
+        .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Textura de fondo tipo club nocturno */
+        .bg-texture {
+            background: 
+                radial-gradient(ellipse at 20% 0%, rgba(196, 30, 58, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(196, 30, 58, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+        }
+        
+        /* Efecto de grano cinematográfico */
+        .grain::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Título principal con efecto dramático */
+        .title-glow {
+            text-shadow: 
+                0 0 40px rgba(196, 30, 58, 0.4),
+                0 0 80px rgba(196, 30, 58, 0.2);
+        }
+        
+        /* Borde decorativo estilo speakeasy */
+        .border-speakeasy {
+            border: 1px solid rgba(212, 168, 83, 0.3);
+            position: relative;
+        }
+        
+        .border-speakeasy::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid rgba(212, 168, 83, 0.15);
+            pointer-events: none;
+        }
+        
+        /* Botón CTA con efecto neón */
+        .btn-canalla {
+            position: relative;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1528 100%);
+            box-shadow: 
+                0 4px 15px rgba(196, 30, 58, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .btn-canalla::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-canalla:hover {
+            background: linear-gradient(135deg, #e63950 0%, #c41e3a 100%);
+            box-shadow: 
+                0 6px 25px rgba(196, 30, 58, 0.6),
+                0 0 40px rgba(196, 30, 58, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn-canalla:hover::before {
+            left: 100%;
+        }
+        
+        /* Cards de eventos */
+        .event-card {
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+            border: 1px solid rgba(212, 168, 83, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .event-card:hover {
+            border-color: rgba(196, 30, 58, 0.5);
+            box-shadow: 0 10px 40px rgba(196, 30, 58, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* Galería con efecto hover */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Separador decorativo */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.5), transparent);
+        }
+        
+        /* Animaciones de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #c41e3a;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e63950;
+        }
+        
+        /* Responsive ajustes */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-texture grain">
+    
+    <!-- ========================================
+         NAVEGACIÓN FIJA
+         ======================================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-negro/90 backdrop-blur-md border-b border-dorado/20">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-xl md:text-2xl font-bold text-crema hover:text-rojo-canalla transition-colors">
+                Comedia <span class="text-rojo-canalla">Canalla</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm uppercase tracking-wider">
+                <a href="#sobre" class="text-crema/70 hover:text-crema transition-colors">El Show</a>
+                <a href="#tickets" class="text-crema/70 hover:text-crema transition-colors">Tickets</a>
+                <a href="#galeria" class="text-crema/70 hover:text-crema transition-colors">Galería</a>
+                <a href="#ubicacion" class="text-crema/70 hover:text-crema transition-colors">Ubicación</a>
+            </div>
+            <a href="#tickets" class="btn-canalla px-5 py-2 rounded text-crema-suave font-medium text-sm uppercase tracking-wider">
+                Entradas
+            </a>
+        </div>
+    </nav>
+    
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-5">
+            <div class="w-[800px] h-[800px] border border-dorado rounded-full"></div>
+            <div class="absolute w-[600px] h-[600px] border border-dorado rounded-full"></div>
+            <div class="absolute w-[400px] h-[400px] border border-dorado rounded-full"></div>
+        </div>
+        
+        <!-- Spotlight effect -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-rojo-canalla/10 via-transparent to-transparent opacity-50"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <!-- Subtítulo superior -->
+            <p class="animate-fade-in-up text-dorado uppercase tracking-[0.3em] text-sm md:text-base mb-6 opacity-0" style="animation-delay: 0.2s;">
+                Stand Up Comedy en Español
+            </p>
+            
+            <!-- Título principal -->
+            <h1 class="animate-fade-in-up hero-title font-display text-5xl md:text-7xl lg:text-8xl font-bold text-crema-suave title-glow mb-6 opacity-0" style="animation-delay: 0.4s;">
+                Comedia<br>
+                <span class="text-rojo-canalla">Canalla</span>
+            </h1>
+            
+            <!-- Ubicación -->
+            <div class="animate-fade-in-up opacity-0 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-crema/80 mb-10" style="animation-delay: 0.6s;">
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-rojo-canalla" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    Calle Ocho, Miami
+                </span>
+                <span class="hidden md:block text-dorado/50">•</span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-rojo-canalla" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    Todos los Jueves
+                </span>
+                <span class="hidden md:block text-dorado/50">•</span>
+                <span class="font-bebas text-dorado tracking-widest">@ Whiskylucan</span>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="animate-fade-in-up opacity-0" style="animation-delay: 0.8s;">
+                <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" class="btn-canalla inline-flex items-center gap-3 px-10 py-4 rounded-sm text-crema-suave font-semibold text-lg uppercase tracking-wider">
+                    <span>Comprar Entradas</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="animate-fade-in absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0" style="animation-delay: 1.2s;">
+                <div class="w-6 h-10 border-2 border-crema/30 rounded-full flex justify-center pt-2">
+                    <div class="w-1 h-3 bg-crema/50 rounded-full animate-bounce"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         SOBRE EL SHOW
+         ======================================== -->
+    <section id="sobre" class="py-20 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="border-speakeasy p-8 md:p-16 bg-negro-suave/50 backdrop-blur-sm">
+                <!-- Decoración superior -->
+                <div class="flex items-center justify-center gap-4 mb-10">
+                    <div class="w-16 h-px bg-dorado/50"></div>
+                    <span class="text-dorado text-2xl">★</span>
+                    <div class="w-16 h-px bg-dorado/50"></div>
+                </div>
+                
+                <h2 class="font-display text-3xl md:text-5xl text-center text-crema-suave mb-8">
+                    Una Noche <span class="text-rojo-canalla">Diferente</span>
+                </h2>
+                
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-lg md:text-xl text-crema/80 leading-relaxed mb-6">
+                        En las entrañas de <strong class="text-dorado">Whiskylucan</strong>, donde el whisky fluye y las luces son tenues, 
+                        nace <span class="text-crema-suave font-bold">Comedia Canalla</span>: el único show de stand up en español de Miami que se atreve 
+                        a cruzar la línea.
+                    </p>
+                    <p class="text-lg md:text-xl text-crema/80 leading-relaxed mb-6">
+                        Cada jueves, los mejores comediantes latinos transforman este rincón de la Calle Ocho 
+                        en un refugio para las carcajadas sin filtro. Aquí no hay temas prohibidos, solo 
+                        buenas risas y la mejor vibra de un <span class="text-rojo-canalla font-medium">speakeasy clandestino</span>.
+                    </p>
+                    <p class="font-bebas text-2xl text-dorado mt-10 tracking-widest">
+                        "Donde la comedia no tiene límites"
+                    </p>
+                </div>
+                
+                <!-- Decoración inferior -->
+                <div class="flex items-center justify-center gap-4 mt-10">
+                    <div class="w-16 h-px bg-dorado/50"></div>
+                    <span class="text-dorado text-2xl">★</span>
+                    <div class="w-16 h-px bg-dorado/50"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Divider -->
+    <div class="divider max-w-2xl mx-auto"></div>
+    
+    <!-- ========================================
+         TICKETS / PRÓXIMOS SHOWS
+         ======================================== -->
+    <section id="tickets" class="py-20 md:py-32">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">No te lo pierdas</p>
+                <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
+                    Próximos <span class="text-rojo-canalla">Shows</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- Card 1 -->
+                <div class="event-card rounded-sm p-8 text-center">
+                    <div class="text-dorado uppercase tracking-widest text-xs mb-2">Jueves</div>
+                    <div class="font-display text-5xl text-crema-suave mb-1">06</div>
+                    <div class="text-crema/60 mb-6">Febrero 2025</div>
+                    <div class="divider mb-6"></div>
+                    <p class="text-crema/70 text-sm mb-2">Puertas: 8:00 PM</p>
+                    <p class="text-crema/70 text-sm mb-6">Show: 9:00 PM</p>
+                    <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" 
+                       class="btn-canalla block w-full py-3 rounded-sm text-crema-suave font-medium uppercase tracking-wider text-sm">
+                        Comprar
+                    </a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="event-card rounded-sm p-8 text-center">
+                    <div class="text-dorado uppercase tracking-widest text-xs mb-2">Jueves</div>
+                    <div class="font-display text-5xl text-crema-suave mb-1">13</div>
+                    <div class="text-crema/60 mb-6">Febrero 2025</div>
+                    <div class="divider mb-6"></div>
+                    <p class="text-crema/70 text-sm mb-2">Puertas: 8:00 PM</p>
+                    <p class="text-crema/70 text-sm mb-6">Show: 9:00 PM</p>
+                    <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" 
+                       class="btn-canalla block w-full py-3 rounded-sm text-crema-suave font-medium uppercase tracking-wider text-sm">
+                        Comprar
+                    </a>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="event-card rounded-sm p-8 text-center">
+                    <div class="text-dorado uppercase tracking-widest text-xs mb-2">Jueves</div>
+                    <div class="font-display text-5xl text-crema-suave mb-1">20</div>
+                    <div class="text-crema/60 mb-6">Febrero 2025</div>
+                    <div class="divider mb-6"></div>
+                    <p class="text-crema/70 text-sm mb-2">Puertas: 8:00 PM</p>
+                    <p class="text-crema/70 text-sm mb-6">Show: 9:00 PM</p>
+                    <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" 
+                       class="btn-canalla block w-full py-3 rounded-sm text-crema-suave font-medium uppercase tracking-wider text-sm">
+                        Comprar
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Nota adicional -->
+            <p class="text-center text-crema/50 text-sm mt-10">
+                * Las entradas también se pueden adquirir en la puerta, sujetas a disponibilidad
+            </p>
+        </div>
+    </section>
+    
+    <!-- Divider -->
+    <div class="divider max-w-2xl mx-auto"></div>
+    
+    <!-- ========================================
+         GALERÍA / ATMÓSFERA
+         ======================================== -->
+    <section id="galeria" class="py-20 md:py-32">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">La experiencia</p>
+                <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
+                    La <span class="text-rojo-canalla">Atmósfera</span>
+                </h2>
+            </div>
+            
+            <!-- Grid de imágenes -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                <!-- Imagen 1 - Grande -->
+                <div class="col-span-2 row-span-2 gallery-item rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&h=800&fit=crop" 
+                         alt="Ambiente del show de comedia" 
+                         class="w-full h-full object-cover rounded-sm aspect-square">
+                </div>
+                
+                <!-- Imagen 2 -->
+                <div class="gallery-item rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop" 
+                         alt="Público disfrutando" 
+                         class="w-full h-full object-cover rounded-sm aspect-square">
+                </div>
+                
+                <!-- Imagen 3 -->
+                <div class="gallery-item rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=400&h=400&fit=crop" 
+                         alt="Escenario de comedia" 
+                         class="w-full h-full object-cover rounded-sm aspect-square">
+                </div>
+                
+                <!-- Imagen 4 -->
+                <div class="gallery-item rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=400&h=400&fit=crop" 
+                         alt="Bar del local" 
+                         class="w-full h-full object-cover rounded-sm aspect-square">
+                </div>
+                
+                <!-- Imagen 5 -->
+                <div class="gallery-item rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=400&fit=crop" 
+                         alt="Cócteles y bebidas" 
+                         class="w-full h-full object-cover rounded-sm aspect-square">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Divider -->
+    <div class="divider max-w-2xl mx-auto"></div>
+    
+    <!-- ========================================
+         UBICACIÓN
+         ======================================== -->
+    <section id="ubicacion" class="py-20 md:py-32">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-dorado uppercase tracking-[0.3em] text-sm mb-4">Encuéntranos</p>
+                <h2 class="font-display text-4xl md:text-6xl text-crema-suave">
+                    La <span class="text-rojo-canalla">Ubicación</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Info del lugar -->
+                <div class="border-speakeasy p-8 md:p-12 bg-negro-suave/50">
+                    <h3 class="font-bebas text-4xl text-dorado mb-6 tracking-wider">Whiskylucan</h3>
+                    
+                    <div class="space-y-4 text-crema/80">
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-rojo-canalla flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-crema">Calle Ocho (SW 8th Street)</p>
+                                <p class="text-sm">Little Havana, Miami, FL</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-rojo-canalla flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-crema">Todos los Jueves</p>
+                                <p class="text-sm">Puertas: 8:00 PM | Show: 9:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-rojo-canalla flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-crema">+21 años</p>
+                                <p class="text-sm">Se requiere ID válido en la entrada</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.google.com/?q=Calle+Ocho+Miami+Little+Havana" 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 mt-8 text-dorado hover:text-crema transition-colors">
+                        <span>Abrir en Google Maps</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Mapa embebido -->
+                <div class="h-80 md:h-full min-h-[320px] rounded-sm overflow-hidden border border-dorado/20">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14362.230674983236!2d-80.24!3d25.765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6f2d3c4e7a9%3A0x1234567890abcdef!2sCalle%20Ocho%2C%20Miami%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="py-16 border-t border-dorado/20 bg-negro">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <!-- Logo y tagline -->
+                <div class="text-center md:text-left">
+                    <h3 class="font-display text-2xl text-crema-suave mb-2">
+                        Comedia <span class="text-rojo-canalla">Canalla</span>
+                    </h3>
+                    <p class="text-crema/50 text-sm">Stand up comedy en español • Miami</p>
+                </div>
+                
+                <!-- Redes Sociales -->
+                <div class="flex gap-6">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/comediacanallamiami" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 rounded-full border border-dorado/30 flex items-center justify-center text-crema/70 hover:text-rojo-canalla hover:border-rojo-canalla transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com/@comediacanallamiami" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 rounded-full border border-dorado/30 flex items-center justify-center text-crema/70 hover:text-rojo-canalla hover:border-rojo-canalla transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/comediacanallamiami" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 rounded-full border border-dorado/30 flex items-center justify-center text-crema/70 hover:text-rojo-canalla hover:border-rojo-canalla transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Email -->
+                    <a href="mailto:info@comediacanallamiami.com" 
+                       class="w-12 h-12 rounded-full border border-dorado/30 flex items-center justify-center text-crema/70 hover:text-rojo-canalla hover:border-rojo-canalla transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Contacto -->
+                <div class="text-center md:text-right">
+                    <p class="text-crema/50 text-sm mb-1">Contrataciones y prensa:</p>
+                    <a href="mailto:info@comediacanallamiami.com" class="text-dorado hover:text-crema transition-colors">
+                        info@comediacanallamiami.com
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-dorado/10 text-center">
+                <p class="text-crema/40 text-sm">
+                    © 2025 Comedia Canalla. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ========================================
+         SCRIPTS
+         ======================================== -->
+    <script>
+        // Smooth scroll para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Efecto de navbar al hacer scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Animación de elementos al entrar en viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos con clase específica
+        document.querySelectorAll('.event-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+    
+</body>
+</html>
